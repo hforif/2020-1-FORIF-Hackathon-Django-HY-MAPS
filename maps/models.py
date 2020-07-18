@@ -5,6 +5,7 @@ from django.db import models
 
 class Building(models.Model):
     number = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=255, default="", blank=True)
     cv_store = models.TextField(default="", blank=True)
     cafe = models.TextField(default="", blank=True)
     lounge = models.TextField(default="", blank=True)
