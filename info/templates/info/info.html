@@ -55,7 +55,7 @@
             </script>
             <div class="text-wrapper">
                 <h1>건물번호 {{ number }}</h1>
-                <h1>백남학술정보관</h1>
+                <h1>{{ name }}</h1>
                 <div class='one-line'><span class="point"># 한줄소개</span> |{{ one_line|linebreaks }}</div>
                 <a href="{% url 'postpostpost:writinglist' number %}">추가 정보게시판</a>
             </div>
@@ -63,7 +63,7 @@
         </div>
 
         <div class="info-body">
-            <div class='department'>
+            <div class='department block'>
                         <span class="detail-point">
                         # 학과 정보 |
                         </span>
@@ -71,7 +71,7 @@
                 {{ department|linebreaks }}
             </div>
 
-            <div class='cv-facilities'>
+            <div class='cv-facilities block'>
                 <div>
                             <span class="detail-point">
                             # 편의점 <i class="fas fa-shopping-basket"></i>
@@ -101,7 +101,7 @@
                 </div>
             </div>
 
-            <div class="cafeteria">
+            <div class="cafeteria block">
                         <span class="detail-point">
                         # 학식정보 |
                         </span>
@@ -109,7 +109,7 @@
                 {{ cafeteria }}
             </div>
 
-            <div class='portal'>
+            <div class='portal block'>
                         <span class="detail-point">
                         # 포털정보 |
                         </span>

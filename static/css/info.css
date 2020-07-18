@@ -29,6 +29,7 @@
 }
 
 .text-wrapper{
+    width: 300px;
     margin: 50px 0 0 30px;
 }
 
@@ -80,4 +81,7 @@
 
 .detail-point{
     font-weight: 600;
+}
+.block{
+    width: 200px;
 }

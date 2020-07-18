@@ -7,7 +7,7 @@ from .models import BuildingPhoto, Building
 def show(requests, number):
     building = Building.objects.get(number=number)
     photos = BuildingPhoto.objects.filter(building=building)
-
+    name = building.name
     number = building.number
     cv_store = building.cv_store
     cafe = building.cafe
@@ -22,7 +22,7 @@ def show(requests, number):
     for photo in photos:
         photos_data.append(photo.url)
 
-    viz = {"photos_data": photos_data, "number": number, "cv_store": cv_store, "cafe": cafe, "lounge": lounge, \
+    viz = {"name": name, "photos_data": photos_data, "number": number, "cv_store": cv_store, "cafe": cafe, "lounge": lounge, \
            "portal": portal, "department": department, "one_line": one_line, "cafeteria": cafeteria}
 
     return render(requests, 'info/info.html', viz)
