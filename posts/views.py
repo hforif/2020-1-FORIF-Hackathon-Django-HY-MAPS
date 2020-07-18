@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, Http404
 from .models import Post, Board, Building
 
@@ -23,6 +24,7 @@ def writinglist(requests, number):
     return render(requests, "writinglist.html", data)
 
 
+@login_required
 def writingpost(requests, number):
     data = {
         "number":number,
