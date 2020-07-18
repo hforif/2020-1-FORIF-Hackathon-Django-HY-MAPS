@@ -93,12 +93,12 @@
                     <br>
                     {{ lounge }}</div>
                 <br>
-{#                <div>#}
-{#                            <span class="detail-point">#}
-{#                            # 인쇄실 <i class="fas fa-print"></i>#}
-{#                            </span>#}
-{#                    <br>#}
-{#                </div>#}
+                {#                <div>#}
+                {#                            <span class="detail-point">#}
+                {#                            # 인쇄실 <i class="fas fa-print"></i>#}
+                {#                            </span>#}
+                {#                    <br>#}
+                {#                </div>#}
             </div>
 
             <div class="cafeteria block">
@@ -116,6 +116,7 @@
                 {{ portal|linebreaks }}
                 <br>
                 {% if portal_video == "" or portal_video == "X" or portal_video == "x" %}
+                {% else %}
                     <a href="{% url 'info:video' number=number %}">
                         <i class="fas fa-map-marked-alt"></i>
                     </a>
