@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/info.css' %}">
+    {% include 'meta.html' %}
+
+</head>
+
+<body>
+<div class="title">HY-MAPS</div>
+<div class='mother'>
+    <div class="info-container">
+        <div class="info-header">
+            <br>
+
+            <div class="photo-wrapper">
+                <!-- Slider main container -->
+                <div class="swiper-container">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+
+                        {% for photo in photos_data %}
+                            <div class="swiper-slide" style="background-image: url('{{ photo }}');"></div>
+                        {% endfor %}
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+
+                </div>
+                <br>
+            </div>
+            <script>
+                var mySwiper = new Swiper('.swiper-container', {
+                    // Optional parameters
+                    direction: 'horizontal',
+                    loop: true,
+
+                    // If we need pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }
+
+                    // And if we need scrollbar
+                })
+
+            </script>
+            <div class="text-wrapper">
+                <h1>건물번호 {{ number }}</h1>
+                <h1>백남학술정보관</h1>
+                <div class='one-line'><span class="point"># 한줄소개</span> |{{ one_line|linebreaks }}</div>
+                <br>
+            </div>
+
+        </div>
+
+        <div class="info-body">
+            <div class='department'>
+                        <span class="detail-point">
+                        # 학과 정보 |
+                        </span>
+                <br>
+                {{ department|linebreaks }}
+            </div>
+
+            <div class='cv-facilities'>
+                <div>
+                            <span class="detail-point">
+                            # 편의점 <i class="fas fa-shopping-basket"></i>
+                            </span>
+                    <br>
+                    {{ cv_store }}</div>
+                <br>
+                <div>
+                            <span class="detail-point">
+                            # 카페 <i class="fas fa-coffee"></i>
+                            </span>
+                    <br>
+                    {{ cafe }}</div>
+                <br>
+                <div>
+                            <span class="detail-point">
+                            # 라운지
+                            </span>
+                    <br>
+                    {{ lounge }}</div>
+                <br>
+                <div>
+                            <span class="detail-point">
+                            # 인쇄실 <i class="fas fa-print"></i>
+                            </span>
+                    <br>
+                </div>
+            </div>
+
+            <div class="cafeteria">
+                        <span class="detail-point">
+                        # 학식정보 |
+                        </span>
+                <br>
+                {{ cafeteria }}
+            </div>
+
+            <div class='portal'>
+                        <span class="detail-point">
+                        # 포털정보 |
+                        </span>
+                {{ portal|linebreaks }}
+                <br>
+                <a href="{% url 'info:video' number=number %}">
+                    <i class="fas fa-map-marked-alt"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

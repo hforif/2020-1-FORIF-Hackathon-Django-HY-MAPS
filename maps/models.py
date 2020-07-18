@@ -9,6 +9,7 @@ class Building(models.Model):
     cafe = models.TextField(default="", blank=True)
     lounge = models.TextField(default="", blank=True)
     portal = models.TextField(default="", blank=True)
+    portal_video = models.TextField(default="", blank=True)
     department = models.TextField(default="", blank=True)
     one_line = models.TextField(default="", blank=True)
     cafeteria = models.TextField(default="", blank=True)
