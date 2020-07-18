@@ -115,9 +115,11 @@
                         </span>
                 {{ portal|linebreaks }}
                 <br>
-                <a href="{% url 'info:video' number=number %}">
-                    <i class="fas fa-map-marked-alt"></i>
-                </a>
+                {% if portal_video == "" or portal_video == "X" or portal_video == "x" %}
+                    <a href="{% url 'info:video' number=number %}">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </a>
+                {% endif %}
             </div>
 
         </div>
