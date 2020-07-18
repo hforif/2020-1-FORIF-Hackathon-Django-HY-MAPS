@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/writinglist.css' %}">
+<div class="writing-list-page">
+    <div class="writing-list-container">
+        <div class="title-area">
+            <h1>★{{department}} 게시판입니다</h1>
+        </div>
+        <div class="information">
+            <div>
+                제목
+            </div>
+            <div>
+                수정된 시간
+            </div>
+        </div>
+        <div class="content-area">
+            {% for p in postlist %}
+            <div class="post-component">
+                <div class="title">
+                    <p>{{ forloop.counter }}.</p>
+                    <a class="t" href="{% url 'postpostpost:writtencontent' pk=p.id %}">
+                        <font color=#2d4b7a>
+                            {{p.title}}
+                        </font>
+                    </a>
+                </div>
+                <div class="time">
+                    {{p.recent_revised_time|date:"n월 d일 H:i"}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="footer-area">
+            <a href="{% url 'postpostpost:writingpost' number=number %}">글쓰기</a>
+        </div>
+    </div>
+</div>
+<!-- TODO: 돌아가기 만들기 -->

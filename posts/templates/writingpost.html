@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/writingpost.css' %}">
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="father-section">
+        <div class="above-section">
+            <textarea name=title type="text" style="width:817px;font-size:15px;"
+                placeholder="제목을 입력해주세요">{{title}}</textarea>
+        </div>
+
+        <br>
+        <div class="middle-section">
+            <textarea name=content style="width:817px;height:600px;font-size:15px;">{{contents}}</textarea>
+        </div>
+
+        <div class="below-section">
+            <a class="btn btn-secondary" href="{% url 'postpostpost:writinglist' number=number %}"
+                style="width: 60px; font-size:15px;">
+                취소
+            </a>
+            <input type="submit" value="작성" style="width: 70px; font: bold 16px Arial;">
+        </div>
+    </div>
+</form>

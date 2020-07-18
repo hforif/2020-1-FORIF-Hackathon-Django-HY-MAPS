@@ -12,8 +12,6 @@
 <div class='mother'>
     <div class="info-container">
         <div class="info-header">
-            <br>
-
             <div class="photo-wrapper">
                 <!-- Slider main container -->
                 <div class="swiper-container">
@@ -31,7 +29,6 @@
                     <!-- If we need navigation buttons -->
                     <div class="swiper-button-prev swiper-button-white"></div>
                     <div class="swiper-button-next swiper-button-white"></div>
-
                 </div>
                 <br>
             </div>
@@ -60,7 +57,7 @@
                 <h1>건물번호 {{ number }}</h1>
                 <h1>백남학술정보관</h1>
                 <div class='one-line'><span class="point"># 한줄소개</span> |{{ one_line|linebreaks }}</div>
-                <br>
+                <a href="{% url 'postpostpost:writinglist' number %}">추가 정보게시판</a>
             </div>
 
         </div>

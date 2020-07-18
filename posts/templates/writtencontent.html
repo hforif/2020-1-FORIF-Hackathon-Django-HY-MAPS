@@ -1,0 +1,34 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/writtencontent.css' %}">
+
+<div class="writtencontent-page">
+    <div class="writtencontent-container">
+        <div class="title-and-contents">
+            <div class="title">
+                {{title}}
+            </div>
+            <div class="contents">
+                {{contents}}
+            </div>
+        </div>
+
+        <div class="options">
+            <div class="back-option">
+                <a href="{% url 'postpostpost:writinglist' number=number %}">돌아가기</a>
+            </div>
+            <div class="authenticated-option">
+                <div class="left-one">
+                    {% if authority %}
+                    <a href="{% url 'postpostpost:updatingpost' pk=pk %}">수정</a>
+                </div>
+                <div class="right-one">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" value="삭제" style="border:none; font-size: 18px; background-color:#ebf5f6;">
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
