@@ -17,9 +17,11 @@ def writinglist(requests, number):
     data = {
         "department":board.building.department,
         "postlist":postlist_data,
-        "number":number
+        "number":number,
+        "name": board.building.name
     }
     return render(requests, "writinglist.html", data)
+
 
 def writingpost(requests, number):
     data = {
