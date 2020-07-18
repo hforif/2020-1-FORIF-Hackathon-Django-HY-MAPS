@@ -1,10 +1,10 @@
 * {
     font-family: 'Noto Sans KR', sans-serif;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 
-.title{
+.title {
     font-size: 50px;
     color: #1D2475;
     margin: 4px 0px 0px;
@@ -13,53 +13,60 @@
     font-weight: 100;
 }
 
-.mother{
+.title > a {
+    font-size: 50px;
+    color: #1D2475;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+.mother {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-bottom: 200px;
 }
 
-.info-container{
+.info-container {
     width: 1000px;
 }
 
-.photo-wrapper{
+.photo-wrapper {
     margin: 50px 100px 0 0;
 }
 
-.text-wrapper{
+.text-wrapper {
     width: 300px;
     margin: 50px 0 0 30px;
 }
 
-.info-header{
+.info-header {
     display: flex;
     flex-direction: row;
 }
 
-.info-body{
+.info-body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 30px 0 0 0;
 }
 
-.one-line{
+.one-line {
     font-size: 20px;
     margin: 20px 0 0 0;
 }
 
-.portal{
+.portal {
     display: flex;
     flex-direction: column;
 }
 
-.fa-map-marked-alt{
+.fa-map-marked-alt {
     font-size: 50px;
 }
 
-.point{
+.point {
     color: #ff9045;
     font-weight: 700;
 }
@@ -69,7 +76,7 @@
     height: 300px;
 }
 
-.swiper-slide{
+.swiper-slide {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -79,9 +86,10 @@
     background-color: #ffffff !important;
 }
 
-.detail-point{
+.detail-point {
     font-weight: 600;
 }
-.block{
+
+.block {
     width: 200px;
 }
