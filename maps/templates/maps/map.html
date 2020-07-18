@@ -10,10 +10,168 @@
     {% include 'meta.html' %}
 </head>
 <body>
-    <div class="main-container">
-        <div class="sub">방콕하고 있는 한양대학교 20학번들을 위한</div>
-        <div class="title">HY-MAPS</div>
-        <div class="mini">coming soon</div>
+
+<div class="menu-container">
+    <div class="menubar">
+        <div class="left-menu">
+            <div class="red-dot dot"></div>
+            <div class="yellow-dot dot"></div>
+            <div class="green-dot dot"></div>
+        </div>
+        <div class="right-menu">
+            {% if user.is_authenticated %}
+                <div class="menuLink">{{ user.username }}님</div>
+                <a class="menuLink" href="{% url 'user:logout' %}">로그아웃</a>
+            {% else %}
+                <a class="menuLink" href="{% url 'user:login' %}">로그인</a>
+                <a class="menuLink" href="{% url 'user:signup' %}">회원가입</a>
+            {% endif %}
+        </div>
     </div>
+</div>
+{#    <div class="button">#}
+{#        <input type="button" name="bt1" value="로그인" onclick="location.href='login.html'">#}
+{#        <input type="button" name="bt2" value="회원가입" onClick="location.href='signup.html'">#}
+{#    </div>#}
+
+<div class="main-container">
+    <div class="sub">방콕하고 있는 한양대학교 20학번들을 위한</div>
+    <div class="title">HY-MAPS</div>
+</div>
+
+<div class="map-image">
+    <div class="map" style="background-image:url('{% static 'image/maps.jpeg' %}')">
+        <a href="{% url 'info:detail' 606 %}">
+            <div class="circle__1 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 607 %}">
+            <div class="circle__2 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 605 %}">
+            <div class="circle__3 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 604 %}">
+            <div class="circle__4 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 508 %}">
+            <div class="circle__5 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 507 %}">
+            <div class="circle__6 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 410 %}">
+            <div class="circle__7 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 505 %}">
+            <div class="circle__8 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 107 %}">
+            <div class="circle__9 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 304 %}">
+            <div class="circle__10 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 504 %}">
+            <div class="circle__11 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 501 %}">
+            <div class="circle__12 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 202 %}">
+            <div class="circle__13 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 102 %}">
+            <div class="circle__14 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 210 %}">
+            <div class="circle__15 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 503 %}">
+            <div class="circle__16 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 106 %}">
+            <div class="circle__17 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 202 %}">
+            <div class="circle__18 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 104 %}">
+            <div class="circle__19 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 101 %}">
+            <div class="circle__20 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 211 %}">
+            <div class="circle__21 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 209 %}">
+            <div class="circle__22 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 109 %}">
+            <div class="circle__23 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 108 %}">
+            <div class="circle__24 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 201 %}">
+            <div class="circle__25 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 204 %}">
+            <div class="circle__26 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 203 %}">
+            <div class="circle__27 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 206 %}">
+            <div class="circle__28 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 207 %}">
+            <div class="circle__29 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 208 %}">
+            <div class="circle__30 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 301 %}">
+            <div class="circle__31 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 401 %}">
+            <div class="circle__32 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 406 %}">
+            <div class="circle__33 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 707 %}">
+            <div class="circle__34 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 706 %}">
+            <div class="circle__35 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 407 %}">
+            <div class="circle__36 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 705 %}">
+            <div class="circle__37 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 305 %}">
+            <div class="circle__38 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 306 %}">
+            <div class="circle__39 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 618 %}">
+            <div class="circle__40 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 402 %}">
+            <div class="circle__41 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 703 %}">
+            <div class="circle__42 circle"></div>
+        </a>
+        <a href="{% url 'info:detail' 701 %}">
+            <div class="circle__43 circle"></div>
+        </a>
+    </div>
+</div>
+
 </body>
 </html>

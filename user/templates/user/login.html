@@ -1,0 +1,47 @@
+{% load static %}
+<head>
+    <title>로그인</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+</head>
+<br/>
+{% if user.is_authenticated %}
+    <body>
+    <div class="login-success">
+        <img src="{% static 'image/로그인하이리온.png' %}" width="300px" alt="">
+        <br>
+        <br>
+        로그인 성공!
+        <br>
+        {{ user.username }}님 환영합니다
+        <br>
+        <br>
+        <a href="/">HOME</a>
+    </div>
+    </body>
+
+    <br/>
+{% else %}
+    <body>
+    <div class="login-box">
+        <h1 class="login-title">HY-MAPS</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>아이디</p>
+            <input required name="username" type="text"/>
+            <p>비밀번호</p>
+            <input required name="password" type="password"/>
+            <br/>
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+            <input class="login-button" type="submit" value="로그인"/>
+        </form>
+        <span>
+         HY-maps에 처음이신가요?
+       <a href="{% url 'user:signup' %}">회원가입</a>
+      </span>
+    </div>
+    </body>
+{% endif %}
+</body>

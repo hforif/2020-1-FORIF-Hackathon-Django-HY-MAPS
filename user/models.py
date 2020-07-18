@@ -5,4 +5,5 @@ from django.db import models
 
 
 class User(AbstractUser):
-    pass
+    student_id = models.CharField(max_length=10, default='')
+    major = models.CharField(max_length=20, default='')
